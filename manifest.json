@@ -3,7 +3,7 @@
 
   "name": "GetWGet",
   "description": "Copy a wget download command to clipboard",
-  "version": "1.0",
+  "version": "1.1",
 
   "permissions": [
     "downloads",
@@ -12,12 +12,12 @@
     "clipboardWrite",
     "storage"
   ],
-  
+
   "background": {
     "scripts": ["eventPage.js"],
     "persistent": false
   },
-  
+
   "browser_action": {
     "default_popup": "popup.html"
   }

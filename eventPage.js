@@ -30,12 +30,14 @@ chrome.downloads.onCreated.addListener(function(downloadItem) {
         }
 
         if (!!cookies)
-          command += " --header='Cookie: "+cookies+"'";
+          command += " --header='Cookie: "
+                  + cookies.replace("'", "'\\''") + "'";
 
         if (!!downloadItem.referrer)
-          command += " --header='Referer: "+downloadItem.referrer+"'";
+          command += " --header='Referer: "
+                  + downloadItem.referrer.replace("'", "'\\''") + "'";
 
-        command += " '"+downloadItem.url+"'";
+        command += " '" + downloadItem.url.replace("'", "'\\''") + "'";
         copyToClip(command);
       });
     }
